@@ -1,6 +1,6 @@
 {
   "homepage": "http://danpatcarroll.github.io/mgp-project",
-  "name": "city-game",
+  "name": "mgp-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
