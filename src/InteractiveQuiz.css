@@ -1,0 +1,108 @@
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    color: green;
+    font-family: monospace;
+    margin-top: 10vh;
+    max-height: 85vh;
+}
+
+.item {
+    margin-left: 3em;
+    margin-right: 3em;
+    font-size: 2em;
+    text-align: left;
+    max-width: 100%;
+}
+
+/* .understand {
+    background-color: green;
+    width: 20vw;
+    height: 6vh;
+    font-size: 2em;
+    border: 0px;
+    text-align: center;
+    font-family: monospace;
+    color: black;
+} */
+
+.button {
+    margin-top: 2em;
+    background-color: green;
+    width: 25%;
+    height: 15%;
+    min-height: 2em;
+    font-size: 175%;
+    border: 0px;
+    text-align: center;
+    font-family: monospace;
+    color: black;
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
+
+.slider {
+    overflow: hidden;
+    width: 60%;
+    -webkit-appearance: none;
+    background-color: green;
+    margin-right: 0em;
+}
+
+.slider::-webkit-slider-runnable-track {
+    height: 50%;
+    -webkit-appearance: none;
+    color: blue;
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 5%;
+    height: 100%;
+    background: black;
+    cursor: ew-resize;
+    /* box-shadow: -0.2em 0 0 0.2em darkgreen; */
+}
+
+.slider:hover {
+    opacity: 1;
+  }
+
+.container {
+    align-items: center;
+    max-width: 50vw;
+}
+
+.barrier {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.barrier::after {
+    content: "-+-+-+-+-+-+-+-+-+-+-+-+-"
+}
+
+.inline {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.marker {
+    width: 20%;
+    margin: 0;
+    text-align: center;
+}
+
+.markcont {
+    width: 63%;
+    margin-right: 0px;
+}
