@@ -20,11 +20,12 @@ export default function QuizSlider(props) {
 
   return (
     <div>
-        <div className="item">{props.text}</div>
-        <div className='barrier item' />
-        <div className='item markcont'><div className='item inline marker'>1</div><div className='item inline marker'>2</div><div className='item inline marker'>3</div><div className='item inline marker'>4</div><div className='item inline marker'>5</div></div>
-        <input className="slider item" type="range" min={0} max={4} onChange={e => {setValue(() => {return parseInt(e.target.value)})}} value={value}></input>
-        <button className="button item" onClick={handleNext}>Next</button>
+        <div className="quizitem">{props.text}</div>
+        <div className='barrier quizitem' />
+        <div className='quizitem markcont'><div className='quizitem inline marker'>1</div><div className='quizitem inline marker'>2</div><div className='quizitem inline marker'>3</div><div className='quizitem inline marker'>4</div><div className='quizitem inline marker'>5</div></div>
+        <input className="slider quizitem" type="range" min={0} max={4} onChange={e => {setValue(() => {return parseInt(e.target.value)})}} value={value}></input>
+        <div className='quizitem barrier'/>
+        <button className="button quizitem" onClick={handleNext}>Next</button>
     </div>
   )
 }

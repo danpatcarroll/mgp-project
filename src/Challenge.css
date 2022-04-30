@@ -1,0 +1,68 @@
+.chalscreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    margin-top: 10vh;
+    max-height: 85vh;
+}
+
+.chalitem {
+    margin-left: 3em;
+    margin-right: 3em;
+    font-size: 2em;
+    max-width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.code {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+.home {
+    margin-top: 2em;
+    background-color: green;
+    width: 25%;
+    height: 15%;
+    min-height: 2em;
+    font-size: 175%;
+    border: 0px;
+    text-align: center;
+    font-family: monospace;
+    color: black;
+    margin-bottom: 10vh;
+}
+
+.home:hover {
+    background-color: darkgreen;
+}
+
+.order {
+    background-color: blue;
+    color: gold;
+    width: 20vw;
+    height: 10vh;
+    font-size: 3vh;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
+    height: 10vh;
+}
+
+.order:hover{
+    background-color: darkblue;
+}
+
+.first {
+    background-color: blue;
+    color: gold;
+    width: 50vw;
+    height: 50vh;
+    font-size: 3em;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
+}

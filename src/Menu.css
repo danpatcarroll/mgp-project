@@ -47,3 +47,14 @@
     border: 0px;
     margin-top: 10vh;
 }
+
+.frst {
+    background-color: blue;
+    color: gold;
+    width: 50vw;
+    height: 20vh;
+    font-size: 5vh;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
+}

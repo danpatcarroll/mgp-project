@@ -8,7 +8,7 @@ import './City.css'
 import Modal from './Modal'
 import Menu from './Menu'
 
-function City({setCity}) {
+function City({setCity, order, setOrder}) {
   const [guessed, setGuessed] = useState([]) //Array of objects of all cities that were guessed
   const guessNameRef = useRef() //Whatever's in the input field
   const [curCity, setCurCity] = useState({}) //JSON object of the answer
@@ -72,6 +72,8 @@ function City({setCity}) {
   '1024949724',
   '1729268475',
   ])
+
+  document.body.style = 'background: white;';
 
   // console.log(curCity.name)
 
@@ -197,19 +199,20 @@ function City({setCity}) {
 
   function handleHome() {
     setCity(false)
+    setOrder(0)
   }
 
   if (mode === 0) {
     return (
     <div>
-      <Menu setMode={handleSetMode}/>
+      <Menu setMode={handleSetMode} order={order}/>
     </div>
     )
   }
 
   return (
   <div className='scren'>
-    <h1 className='title flex'>Guess The City</h1>
+    <h1 className='title flex'>Cityguessr</h1>
     <div className='flex'>Game Mode: {mode === 1 ? 'Easy' : mode === 2 ? 'Medium' : 'Hard'}</div>
     <div className='box flex'>
       <Guessed allCities={guessed} cur={curCity} mode={mode} minDist={minDist}/>

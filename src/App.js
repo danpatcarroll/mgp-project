@@ -3,11 +3,15 @@ import City from "./City"
 import InteractiveQuiz from "./InteractiveQuiz"
 import Challenge from './Challenge'
 import "./App.css"
+import Waka from './Waka'
 
 export default function App() {
     const [city, setCity] = useState(false)
     const [quiz, setQuiz] = useState(false)
     const [challenge, setChallenge] = useState(false)
+    const [waka, setWaka] = useState(false)
+    const [order, setOrder] = useState(0)
+    const [step, setStep] = useState(1)
 
     document.body.style = 'background: white;';
 
@@ -48,7 +52,7 @@ export default function App() {
     }
 
     function callCity() {
-        return <City setCity={setCity}/>
+        return <City setCity={setCity} setOrder={setOrder} order={order}/>
     }
 
     function handleQuizClick() {
@@ -56,7 +60,7 @@ export default function App() {
     }
 
     function callQuiz() {
-        return <InteractiveQuiz setQuiz={setQuiz}/>
+        return <InteractiveQuiz step={step} setQuiz={setQuiz} setOrder={setOrder} order={order}/>
     }
 
     function handleChallengeClick() {
@@ -64,17 +68,33 @@ export default function App() {
     }
 
     function callChallenge() {
-        return <Challenge setChallenge={setChallenge}/>
+        return <Challenge setChallenge={setChallenge} setOrder={setOrder} order={order}/>
+    }
+
+    function handleWakaClick() {
+        setWaka(prev => {return !prev})
+    }
+
+    function callWaka() {
+        return <Waka setWaka={setWaka} setOrder={setOrder} order={order}/>
+    }
+
+    function handleOrderClick() {
+        setOrder(prev => {
+            return prev + 1
+        })
+        setStep(0)
     }
 
     return (
-        city ? callCity() : quiz ? callQuiz() : challenge ? callChallenge() : <div className='flexbox'>
+        (city || order === 4) ? callCity() : (quiz || order === 1) ? callQuiz() : (challenge || order === 3) ? callChallenge() : (waka || order === 2) ? callWaka() : <div className='flexbox'>
             <div className='genre flex'>Spandan Patel - Multi Genre Project</div>
             <div className='genre flex'>Creativity in Programming</div>
             <button onClick={handleQuizClick} className='quiz flex' onMouseOver={handleEasyOver} onMouseOut={handleEasyOut}>1. Learn to Code Based on Your Desires Quiz</button>
-            <button className='waka flex' onMouseOver={handleMediumOver} onMouseOut={handleMediumOut}>2. WakaHow to Code in PyJavaGoPHPSwiftRuby#++</button>
+            <button onClick={handleWakaClick} className='waka flex' onMouseOver={handleMediumOver} onMouseOut={handleMediumOut}>2. WakaHow to Code in PyJavaGoPHPSwiftRuby#++</button>
             <button onClick={handleChallengeClick} className='challenge flex' onMouseOver={handleHowtoOver} onMouseOut={handleHowtoOut}>3. Dice God Challenge</button>
             <button onClick={handleCityClick} className='city flex' onMouseOver={handleHardOver} onMouseOut={handleHardOut}>4. Cityguessr</button>
+            <button onClick={handleOrderClick} className='order flex'>Go In Order</button>
         </div>
   )
   }

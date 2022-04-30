@@ -15,7 +15,7 @@ export default function InteractiveQuiz(props) {
     const [kotlin, setKotlin] = useState(0)
     const [ruby, setRuby] = useState(0)
     const [sql, setSql] = useState(0)
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(props.step)
     const [sorted, setSorted] = useState([])
 
     document.body.style = 'background: black;';
@@ -61,6 +61,7 @@ export default function InteractiveQuiz(props) {
 
     function handleHome() {
         props.setQuiz(false)
+        props.setOrder(0)
     }
 
     function sortCode() {
@@ -85,10 +86,14 @@ export default function InteractiveQuiz(props) {
 
   return (
     <div className="screen">
-        {step === 1 ?
+        {step === 0 ? <div>
+        <div className='quizitem first'>This is the first step in the coding journey. It represents figuring out what to learn before you start.</div>
+        <button className="quizitem button" onClick={handleClick}>Next</button></div>
+
+        : step === 1 ?
         <div>
-            <div className="item">For this quiz, enter a number from 1 to 5 indicating how interested you are in learning a skill. 1 means you are not interested at all and 5 means you are very interested. After it's done, you'll get an ordered list of the most useful languages for you to learn along with a score for how relatively useful it is.</div>
-            <button className="item button" onClick={handleClick}>I Understand</button>
+            <div className="quizitem">For this quiz, enter a number from 1 to 5 indicating how interested you are in learning a skill. 1 means you are not interested at all and 5 means you are very interested. After it's done, you'll get an ordered list of the most useful languages for you to learn along with a score for how relatively useful it is.</div>
+            <button className="quizitem button" onClick={handleClick}>I Understand</button>
         </div> : step === 2 ?
             <QuizSlider code={[3,5,0,5,0,3,3,0,0,3,1]} handleNext={handleNext} text={"1. How interested are you in website development?"}/> : step === 3 ?
             <QuizSlider code={[0,0,5,0,2,1,0,0,5,0,0]} handleNext={handleNext} text={"2. How interested are you in Android mobile app development?"}/> : step === 4 ?
@@ -100,24 +105,25 @@ export default function InteractiveQuiz(props) {
             <QuizSlider code={[3,5,0,2,0,0,0,0,0,0,0]} handleNext={handleNext} text={"8. How interested are you in making animations?"}/> : step === 10 ?
             <QuizSlider code={[3,1,4,0,5,0,0,0,0,0,0]} handleNext={handleNext} text={"9. How interested are you in competitive programming (fast & efficient code)?"}/> : step === 11 ?
             <div>
-                <div className='item'>You're done with the quiz. Click next to see the ordered list of languages you should learn from least to most useful.</div>
-                <button className="button item" onClick={handleFinal}>Next</button>
+                <div className='quizitem'>You're done with the quiz. Click next to see the ordered list of languages you should learn from least to most useful.</div>
+                <button className="button quizitem" onClick={handleFinal}>Next</button>
             </div> :
             <div className='container'>
-                <div className="item">1. {sorted[0][0]}: {sorted[0][1]}</div>
-                <div className="item">2. {sorted[1][0]}: {sorted[1][1]}</div>
-                <div className="item">3. {sorted[2][0]}: {sorted[2][1]}</div>
-                <div className="item">4. {sorted[3][0]}: {sorted[3][1]}</div>
-                <div className="item">5. {sorted[4][0]}: {sorted[4][1]}</div>
-                <div className="item">6. {sorted[5][0]}: {sorted[5][1]}</div>
-                <div className="item">7. {sorted[6][0]}: {sorted[6][1]}</div>
-                <div className="item">8. {sorted[7][0]}: {sorted[7][1]}</div>
-                <div className="item">9. {sorted[8][0]}: {sorted[8][1]}</div>
-                <div className="item">10. {sorted[9][0]}: {sorted[9][1]}</div>
-                <div className="item">11. {sorted[10][0]}: {sorted[10][1]}</div>
-                <div className='item barrier'/>
-                <div className="item">This is just a list of suggestions rather than a pathway to follow. In the end, the most important thing is staying committed to a language. Some languages also are just more likely to show up.</div>
-                <button className="item button" onClick={handleAgain}>Try Again</button><button className='item button' onClick={handleHome}>Return Home</button>
+                <div className="quizitem">1. {sorted[0][0]}: {sorted[0][1]}</div>
+                <div className="quizitem">2. {sorted[1][0]}: {sorted[1][1]}</div>
+                <div className="quizitem">3. {sorted[2][0]}: {sorted[2][1]}</div>
+                <div className="quizitem">4. {sorted[3][0]}: {sorted[3][1]}</div>
+                <div className="quizitem">5. {sorted[4][0]}: {sorted[4][1]}</div>
+                <div className="quizitem">6. {sorted[5][0]}: {sorted[5][1]}</div>
+                <div className="quizitem">7. {sorted[6][0]}: {sorted[6][1]}</div>
+                <div className="quizitem">8. {sorted[7][0]}: {sorted[7][1]}</div>
+                <div className="quizitem">9. {sorted[8][0]}: {sorted[8][1]}</div>
+                <div className="quizitem">10. {sorted[9][0]}: {sorted[9][1]}</div>
+                <div className="quizitem">11. {sorted[10][0]}: {sorted[10][1]}</div>
+                <div className='quizitem barrier'/>
+                <div className="quizitem">This is just a list of suggestions rather than a pathway to follow. In the end, the most important thing is staying committed to a language. Some languages also are just more likely to show up.</div>
+                <button className="quizitem button" onClick={handleAgain}>Try Again</button><button className='quizitem button' onClick={handleHome}>Return Home</button>
+                {props.order > 0 ? <button className="quizitem button order" onClick={() => {props.setQuiz(false);props.setOrder(prev => {return prev + 1})}}>Next Step</button> : <div />}
             </div>
         }
     </div>

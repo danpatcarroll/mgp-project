@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import HowtoModal from './HowtoModal'
 import './Menu.css'
 
-export default function Menu({setMode}) {
+export default function Menu({setMode, order}) {
     const [open, setOpen] = useState(false)
 
 
@@ -48,7 +48,8 @@ export default function Menu({setMode}) {
 
   return (
     <div className='flexbox'>
-        <div className='title flex'>Welcome to Guess The City</div>
+        {order > 0 ? <div className='frst'>This is the fourth step in the coding journey. It represents building a creative project after you improve your skills enough to be proficient.</div> : <div />}
+        <div className='title flex'>Welcome to Cityguessr</div>
         <button onClick={() => setMode(1)} className='easy flex' onMouseOver={handleEasyOver} onMouseOut={handleEasyOut}>Easy</button>
         <button onClick={() => setMode(2)} className='medium flex' onMouseOver={handleMediumOver} onMouseOut={handleMediumOut}>Medium</button>
         <button onClick={() => setMode(3)} className='hard flex' onMouseOver={handleHardOver} onMouseOut={handleHardOut}>Hard</button>

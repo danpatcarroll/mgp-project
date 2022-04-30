@@ -47,3 +47,18 @@
     font-size: 3vh;
     border: 0px;
 }
+
+.order {
+    background-color: blue;
+    color: gold;
+    width: 20vw;
+    height: 10vh;
+    font-size: 3vh;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
+}
+
+.order:hover{
+    background-color: darkblue;
+}

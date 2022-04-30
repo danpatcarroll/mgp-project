@@ -10,7 +10,7 @@
     max-height: 85vh;
 }
 
-.item {
+.quizitem {
     margin-left: 3em;
     margin-right: 3em;
     font-size: 2em;
@@ -30,7 +30,7 @@
 } */
 
 .button {
-    margin-top: 2em;
+    margin-top: 10vh;
     background-color: green;
     width: 25%;
     height: 15%;
@@ -82,9 +82,11 @@
 }
 
 .barrier {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     text-align: center;
+    height: 10vh;
+    margin-bottom: 0px;
 }
 
 .barrier::after {
@@ -98,11 +100,41 @@
 
 .marker {
     width: 20%;
-    margin: 0;
+    margin: 0px;
     text-align: center;
+    height: 10vh;
+    margin-top: 0px;
 }
 
 .markcont {
     width: 63%;
     margin-right: 0px;
+    height: 10vh;
+}
+
+.order {
+    background-color: blue;
+    color: gold;
+    width: 20vw;
+    height: 10vh;
+    font-size: 3vh;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
+    height: 10vh;
+}
+
+.order:hover{
+    background-color: darkblue;
+}
+
+.first {
+    background-color: blue;
+    color: gold;
+    width: 50vw;
+    height: 50vh;
+    font-size: 3em;
+    border-width: 10px;
+    border-color: gold;
+    border-style: solid;
 }
