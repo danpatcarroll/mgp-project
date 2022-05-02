@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/mgp-project/static/css/main.8b035321.css",
-    "main.js": "/mgp-project/static/js/main.b91ec365.js",
+    "main.js": "/mgp-project/static/js/main.63810aa6.js",
     "static/media/waka7.jpg": "/mgp-project/static/media/waka7.8adc6dc7f6c839826a1a.jpg",
     "static/media/waka2.jpg": "/mgp-project/static/media/waka2.ae66c8eb289ab9e6d170.jpg",
-    "static/media/waka1.jpg": "/mgp-project/static/media/waka1.e3117565ea27724a310f.jpg",
+    "static/media/waka1.jpg": "/mgp-project/static/media/waka1.285ac96dfd46c668b069.jpg",
     "static/media/waka6.jpg": "/mgp-project/static/media/waka6.dd64d3c6e1f0bf19edf9.jpg",
     "static/media/waka5.jpg": "/mgp-project/static/media/waka5.68c99a301668aa28eebb.jpg",
     "static/media/waka8.jpg": "/mgp-project/static/media/waka8.5f68b9656e91dd00976d.jpg",
@@ -14,10 +14,10 @@
     "static/media/wakatrust.jpg": "/mgp-project/static/media/wakatrust.4eb975fe0643fa55153a.jpg",
     "index.html": "/mgp-project/index.html",
     "main.8b035321.css.map": "/mgp-project/static/css/main.8b035321.css.map",
-    "main.b91ec365.js.map": "/mgp-project/static/js/main.b91ec365.js.map"
+    "main.63810aa6.js.map": "/mgp-project/static/js/main.63810aa6.js.map"
   },
   "entrypoints": [
     "static/css/main.8b035321.css",
-    "static/js/main.b91ec365.js"
+    "static/js/main.63810aa6.js"
   ]
 }
